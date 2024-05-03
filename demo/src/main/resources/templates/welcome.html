@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Pagina di Benvenuto</title>
+    <link rel="stylesheet" href="/css/style.css" th:href="@{/css/style.css}">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+</head>
+<body>
+<div class="message-box">
+    <h1 th:text="${message}">Messaggio di benvenuto predefinito</h1>
+</div>
+<div>
+    <!-- Bottone per passare alla pagina di creazione storia -->
+    <a href="creastoria" th:href="@{/creastoria}"><button>Crea la tua Storia</button></a>
+</div>
+<div class="footer">
+    Spring Boot & Thymeleaf
+</div>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Crea Storia</title>
+    <style>
+  body {
+    font-family: 'Press Start 2P', cursive; /* Font stile videogioco arcade */
+    background-color: black; /* Sfondo nero */
+    color: #00BFFF; /* Blu fluo */
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+h1, h2 {
+    text-align: center;
+    background: -webkit-linear-gradient(45deg, #0048FF, #00BFFF);
+    color: #00BFFF;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+input[type="text"], textarea {
+    width: 100%;
+    padding: 8px;
+    margin: 10px 0;
+    display: inline-block;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+    background-color: #222;
+    color: #00BFFF;
+    border-radius: 5px;
+}
+
+label {
+    color: #00BFFF;
+}
+
+button {
+    background-color: #0048FF; /* Blu scuro per contrasto */
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    border-radius: 5px;
+    font-family: 'Press Start 2P', cursive;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #00BFFF; /* Blu fluo al passaggio del mouse */
+}
+
+form {
+    width: 90%; /* Larghezza del form */
+    max-width: 600px; /* Larghezza massima del form */
+}
+
+    </style>
+
+</head>
+<body>
+<h1 th:text="${title}">Titolo della pagina</h1>
+
+<!-- Form per creare la storia principale -->
+<form action="#" th:action="@{/creaStoria}" th:method="post">
+    <div>
+        <label for="titoloStoria">Titolo della Storia:</label>
+        <input type="text" id="titoloStoria" name="titoloStoria" required>
+    </div>
+    <div>
+        <label for="descrizioneStoria">Descrizione della Storia:</label>
+        <textarea id="descrizioneStoria" name="descrizioneStoria" required></textarea>
+    </div>
+
+    <!-- Form innestato per aggiungere scenari alla storia -->
+    <h2>Aggiungi Scenari</h2>
+    <div>
+        <label for="titoloScenario">Titolo Scenario:</label>
+        <input type="text" id="titoloScenario" name="titoloScenario">
+    </div>
+    <div>
+        <label for="descrizioneScenario">Descrizione Scenario:</label>
+        <textarea id="descrizioneScenario" name="descrizioneScenario"></textarea>
+    </div>
+    <button type="button" onclick="aggiungiScenario()">Aggiungi Scenario</button>
+
+    <div>
+        <button type="submit">Crea Storia</button>
+    </div>
+</form>
+
+<script>
+        function aggiungiScenario() {
+            // Qui puoi aggiungere logica per aggiungere dinamicamente campi scenario al form
+            console.log("Aggiungi scenario");
+        }
+    </script>
+</body>
+</html>
